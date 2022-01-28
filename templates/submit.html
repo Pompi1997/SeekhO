@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Student's Assignment submission Panel
+{% endblock title %}
+
+{% block body %}
+
+<form method="post" action="/submit/" enctype="multipart/form-data">
+  {% csrf_token %}
+<div class="mb-3">
+  <label  class="form-label">Set Assignment Heading</label>
+  <input type="text" name="assname" class="form-control" id="floatingInput" placeholder="Heading of Assignment"><br>
+
+  <label  class="form-label">Class name</label><br>
+
+
+  <select name="assclass" id="class">
+    
+            <option value="{{cl}}">{{cl}}</option>
+    
+  </select>
+
+  <br>
+
+  <br><label  class="form-label">Upload materials and notes</label><br>
+  <input class="form-control" name="assfile" type="file" id="formFile">
+
+  <br><label  class="form-label">Student name</label><br>
+  <input class="form-control" name="Sname" type="text" value="{{sname}}" id="formFile" readonly>
+
+  
+</div>
+
+<br>
+<button class="w-20 btn btn-md btn-primary" type="submit">POST</button>
+</form>
+{% endblock body %}

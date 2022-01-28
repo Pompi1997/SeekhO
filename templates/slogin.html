@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Student's Panel
+{% endblock title %}
+
+{% block body %}
+<br>
+<div class="container py-4 w-50 mb-4 " style="border:2px solid #999999 ;">
+    <form method="post" action="{% url 'slogin' %}">
+        {% csrf_token %}
+             <h1 class="h3 mb-3 fw-normal text-center"> Student Log in </h1>
+                <div class="form-group py-3">
+                    <label for="floatingInput">Student UserName</label>
+                    <input type="text" name="Sname" class="form-control" id="floatingInput" placeholder="UserName" autocomplete="off">
+                </div>
+    
+                <div class="form-group py-3">
+                    <label for="floatingPassword">Enter Password</label>
+                    <input type="password" name="Spwd" class="form-control" id="floatingPassword" placeholder="Password" >
+                </div>
+
+    
+        <div class="col-md-12 text-center">
+        <button class="w-20 btn btn-sm btn-primary" >Submit</button>
+        <br><br>
+        <p> Not yet Registered?? <a style="text-decoration:none" href="/StuReg">Register here</a>
+        </div>
+    
+{% endblock body %}

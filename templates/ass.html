@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Teacher's Panel
+{% endblock title %}
+
+{% block body %}
+
+<form method="post" action="/ass/" enctype="multipart/form-data">
+  {% csrf_token %}
+<div class="mb-3">
+  <label  class="form-label">Set Assignment Heading</label>
+  <input type="text" name="assname" class="form-control" id="floatingInput" placeholder="Heading of Assignment"><br>
+
+  <label  class="form-label">Class name</label><br>
+  {% comment %} <select name="assclass" id="class">
+    {% for i in ass %}
+            <option value="{{i.className}}">{{i.className}}</option>
+    {% endfor %}
+  </select> {% endcomment %}
+
+  <select name="assclass" id="class">
+    
+            <option value="{{cl}}">{{cl}}</option>
+    
+  </select>
+
+  <br>
+
+  <br><label  class="form-label">Upload materials and notes</label><br>
+  <input class="form-control" name="assfile" type="file" id="formFile">
+
+  <br><label  class="form-label">Teacher name</label><br>
+  <input class="form-control" name="tname" type="text" value="{{tname}}" id="formFile" readonly>
+
+  <label >Post Notice</label>
+  <textarea class="form-control" name="assnotice" placeholder="Write text" id="floatingTextarea2" style="height: 100px"></textarea>
+  
+</div>
+
+<br>
+<button class="w-20 btn btn-md btn-primary" type="submit">POST</button>
+</form>
+{% endblock body %}

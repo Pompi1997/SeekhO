@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Home
+{% endblock title %}
+{% block body %}
+ 
+<div class="container-fluid py-3">
+ <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 font-italic">Redefine Teaching & Learning with seeKHO</h1>
+          <p class="lead my-3">Come forward with seeKHO as a tool to shape your student's future. SeeKHO aims at making learning easier and effortless</p>
+        </div>
+ </div>
+ 
+<br><br>
+ <div class="row" >
+  <div class="col-sm-6" >
+    <div class="card text-center bg-info text-white">
+      <div class="card-header "><b>Are you a Student??</b></div>
+      <div class="card-body" >
+        
+        <p class="card-text">Register below to start learning.</p>
+        <a href="/StuReg" class="btn btn-dark">Register</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card text-center bg-info text-white">
+      <div class="card-header "><b>Are you a Teacher??</b></div>
+      <div class="card-body">
+        
+        <p class="card-text">Register below to start teaching</p>
+        <a href="/TeachReg" class="btn btn-dark">Register</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+{% endblock body %}

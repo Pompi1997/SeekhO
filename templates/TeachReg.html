@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}Teacher's Panel
+{% endblock title %}
+
+{% block body %}
+<br>
+<div class="sign">
+  <div class="container py-4 w-50 mb-4 " style="border:2px solid #999999 ;">
+
+        <form method="post" action="/TeachReg">
+        {% csrf_token %}
+            <h1 class="h3 mb-3 fw-normal text-center">Teacher Registration</h1>
+
+    
+            <div class="form-group py-3">
+                <label for="floatingInput">Teacher UserName</label>
+              <input type="text" name="Tname" class="form-control" id="floatingInput" placeholder="John Dough">
+              
+            </div>
+    
+     
+    
+        <div class="form-group py-3">
+        <label for="floatingPassword">Enter Password</label>
+          <input type="password" name="Tpwd" class="form-control" id="floatingPassword" placeholder="Password">
+          </div>
+    
+          {% comment %} <div class="form-group py-3">
+            <label for="floatingInput">Enter Specialization</label>
+              <input type="text" name="spec" class="form-control" id="Specialization" placeholder="Specialization">
+              </div>
+
+           <div class="form-group py-3">
+            <label for="floatingInput">Enter Qualification</label>
+              <input type="text" name="qualification" class="form-control" id="Qualification" placeholder="Qualification">
+              </div> {% endcomment %}
+              
+              <label  class="form-label">Class name</label><br>
+              <select name="className" id="class">
+                {% for i in tea %}
+                        <option value="{{i.className}}">{{i.className}}</option>
+                {% endfor %}
+              </select>
+
+
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <div class="col-md-12 text-center">
+          <button class="w-20 btn btn-sm btn-primary" type="submit">Submit</button>
+          <br><br>
+          <p> Already Registered?? <a style="text-decoration:none" href="/tlogin">Login here</a>
+          </div>
+        
+    </div>
+{% endblock body %}
